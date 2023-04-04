@@ -1,0 +1,103 @@
+
+
+
+
+<ItemLabel@MDLabel>:
+    font_size:'25sp'
+    halign:'left'
+    valign:'middle'
+    text_size:self.size
+
+<Conteiner>:
+    rows:3
+    text_input:text_input
+    salt:salt
+    nitr:nitr
+    dext:dext
+    start:start
+    time:time
+
+    AnchorLayout:
+        size_hint:1, 0.14
+        MDTextField:
+            id:text_input
+            font_size:'45sp'
+            multiline: False
+            input_type:'number'
+            input_filter:'int'
+
+
+
+    GridLayout:
+        cols:2
+
+
+        BoxLayout:
+            padding:[30,0,0,0]
+            orientation:'vertical'
+            ItemLabel:
+
+                text:'Минуты'
+
+
+            ItemLabel:
+
+                text:'Часы'
+
+
+            ItemLabel:
+
+
+                text:'Дни'
+
+
+            ItemLabel:
+
+                text:'Месяца'
+
+            ItemLabel:
+                text:'Годы'
+
+
+
+
+
+
+        BoxLayout:
+            size_hint:0.5,1
+            orientation:'vertical'
+
+            ItemLabel:
+
+                id:salt
+                text:'0'
+
+
+            ItemLabel:
+                id:nitr
+                text:'0'
+
+            ItemLabel:
+                id:dext
+                text:'0'
+
+
+            ItemLabel:
+                id:start
+                text:'0'
+
+            ItemLabel:
+                id:time
+                text:'0'
+
+
+
+
+    BoxLayout:
+        size_hint:1,0.15
+        padding:[30,0,30,30]
+        MDRaisedButton:
+            on_release:
+                root.calculate()
+            text:'Go'
+            font_size:40
